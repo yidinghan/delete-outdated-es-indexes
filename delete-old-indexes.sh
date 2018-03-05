@@ -1,4 +1,4 @@
-host=${eshost:-localhost}
+host=${eshost:-elasticsearch}
 port=${esport:-9200}
 days=${esmaxdays:-15}
 prefix=${esindexprefix:-apm}
