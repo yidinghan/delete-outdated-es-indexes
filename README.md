@@ -1,0 +1,1 @@
+# delete-outdated-es-indexes
