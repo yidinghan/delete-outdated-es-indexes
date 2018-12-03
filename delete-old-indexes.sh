@@ -12,13 +12,16 @@ echo "now": $now
 
 for index in $indexes
 do
-  date=$(echo $index | cut -d '-' -f 3 | sed "s/\./-/g")
+  date=$(echo $index | cut -d '-' -f 4 | sed "s/\./-/g")
+	echo $date
   datetime=$(date -d "$date" +%s)
   diff=$((((now - datetime) / 86400) - days))
   if [ $diff -gt -1 ]
   then
     echo "delete:" $index
-    curl -XDELETE "${urlprefix}/${index}"
+		url=${urlprefix}/${index}
+		echo delete index $url
+    curl -XDELETE $url
     echo "\n"
   fi
 done
